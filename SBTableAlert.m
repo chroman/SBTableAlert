@@ -100,7 +100,8 @@
 @implementation SBTableAlertCellBackgroundView
 
 - (void)drawRect:(CGRect)r {
-	[(SBTableAlertCell *)[self superview] drawCellBackgroundView:r];
+    [ SBTableAlertCell drawCellBackgroundView:r];
+	//[(SBTableAlertCell *)[self superview] drawCellBackgroundView:r];
 }
 
 @end
@@ -198,18 +199,18 @@
 	[_cellBackgroundView setNeedsDisplay];
 }
 
-- (void)drawCellBackgroundView:(CGRect)r {
++ (void)drawCellBackgroundView:(CGRect)r {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextSetLineWidth(context, 1.5);
 		
 	[[UIColor colorWithWhite:1 alpha:0.8] set];
 	CGContextMoveToPoint(context, 0, 0);
-	CGContextAddLineToPoint(context, self.bounds.size.width, 0);
+	CGContextAddLineToPoint(context, r.size.width, 0);
 	CGContextStrokePath(context);
 		
 	[[UIColor colorWithWhite:0 alpha:0.35] set];
-	CGContextMoveToPoint(context, 0, self.bounds.size.height);
-	CGContextAddLineToPoint(context, self.bounds.size.width, self.bounds.size.height);
+	CGContextMoveToPoint(context, 0, r.size.height);
+	CGContextAddLineToPoint(context, r.size.width, r.size.height);
 	CGContextStrokePath(context);
 }
 
@@ -248,7 +249,7 @@
 	if ((self = [super init])) {
 		NSString *message = format ? [[[NSString alloc] initWithFormat:format arguments:args] autorelease] : nil;
 		
-		_alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelTitle otherButtonTitles:nil];
+		_alertView = [[TSAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelTitle otherButtonTitles:nil];
 		
 		_maximumVisibleRows = 4;
 		_rowHeight = 40.;
@@ -262,8 +263,9 @@
 		[_tableView setSeparatorColor:[UIColor lightGrayColor]];
 		[_tableView.layer setCornerRadius:kTableCornerRadius];
 		
-		[_alertView addSubview:_tableView];
-		
+		//[_alertView addSubview:_tableView];
+		_alertView.customSubview = _tableView;
+        
 		_shadow = [[SBTableViewTopShadowView alloc] initWithFrame:CGRectZero];
 		[_shadow setBackgroundColor:[UIColor clearColor]];
 		[_shadow setHidden:YES];
@@ -273,7 +275,7 @@
 		[_alertView addSubview:_shadow];
 		[_alertView bringSubviewToFront:_shadow];
 		
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(layoutAfterSomeTime) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(layoutAfterSomeTime) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 	}
 	
 	return self;
@@ -341,11 +343,11 @@
 	[_tableView setDataSource:tableViewDataSource];
 }
 
-- (id<UIAlertViewDelegate>)alertViewDelegate {
+- (id<TSAlertViewDelegate>)alertViewDelegate {
 	return _alertView.delegate;
 }
 
-- (void)setAlertViewDelegate:(id<UIAlertViewDelegate>)alertViewDelegate {
+- (void)setAlertViewDelegate:(id<TSAlertViewDelegate>)alertViewDelegate {
 	[_alertView setDelegate:alertViewDelegate];
 }
 
@@ -407,6 +409,8 @@
 															 _tableView.frame.origin.y,
 															 _tableView.frame.size.width,
 															 8)];
+    
+    [ _alertView setNeedsLayout ];
 }
 
 - (void)layoutAfterSomeTime{
