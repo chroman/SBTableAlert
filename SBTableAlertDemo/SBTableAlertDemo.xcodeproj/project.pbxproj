@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223DBA2718048137003712A5 /* TSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DBA2018048137003712A5 /* TSAlertView.m */; };
+		223DBA2818048137003712A5 /* TSAlertViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 223DBA2118048137003712A5 /* TSAlertViewBackground.png */; };
+		223DBA2918048137003712A5 /* TSAlertViewBackground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 223DBA2218048137003712A5 /* TSAlertViewBackground2.png */; };
+		223DBA2A18048137003712A5 /* TSAlertViewButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 223DBA2318048137003712A5 /* TSAlertViewButtonBackground.png */; };
+		223DBA2B18048137003712A5 /* TSAlertViewButtonBackground_Highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 223DBA2418048137003712A5 /* TSAlertViewButtonBackground_Highlighted.png */; };
+		223DBA2C18048137003712A5 /* TSAlertViewCancelButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 223DBA2518048137003712A5 /* TSAlertViewCancelButtonBackground.png */; };
+		223DBA2D18048137003712A5 /* TSAlertViewMessageListViewShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 223DBA2618048137003712A5 /* TSAlertViewMessageListViewShadow.png */; };
 		F48DBE2013935E3B0087CD02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48DBE1F13935E3B0087CD02 /* UIKit.framework */; };
 		F48DBE2213935E3B0087CD02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48DBE2113935E3B0087CD02 /* Foundation.framework */; };
 		F48DBE2413935E3B0087CD02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48DBE2313935E3B0087CD02 /* CoreGraphics.framework */; };
@@ -20,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		223DBA1F18048137003712A5 /* TSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertView.h; sourceTree = "<group>"; };
+		223DBA2018048137003712A5 /* TSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlertView.m; sourceTree = "<group>"; };
+		223DBA2118048137003712A5 /* TSAlertViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TSAlertViewBackground.png; sourceTree = "<group>"; };
+		223DBA2218048137003712A5 /* TSAlertViewBackground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TSAlertViewBackground2.png; sourceTree = "<group>"; };
+		223DBA2318048137003712A5 /* TSAlertViewButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TSAlertViewButtonBackground.png; sourceTree = "<group>"; };
+		223DBA2418048137003712A5 /* TSAlertViewButtonBackground_Highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TSAlertViewButtonBackground_Highlighted.png; sourceTree = "<group>"; };
+		223DBA2518048137003712A5 /* TSAlertViewCancelButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TSAlertViewCancelButtonBackground.png; sourceTree = "<group>"; };
+		223DBA2618048137003712A5 /* TSAlertViewMessageListViewShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TSAlertViewMessageListViewShadow.png; sourceTree = "<group>"; };
 		F48DBE1B13935E3B0087CD02 /* SBTableAlertDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBTableAlertDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48DBE1F13935E3B0087CD02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F48DBE2113935E3B0087CD02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223DBA1E18048137003712A5 /* TSAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				223DBA1F18048137003712A5 /* TSAlertView.h */,
+				223DBA2018048137003712A5 /* TSAlertView.m */,
+				223DBA2118048137003712A5 /* TSAlertViewBackground.png */,
+				223DBA2218048137003712A5 /* TSAlertViewBackground2.png */,
+				223DBA2318048137003712A5 /* TSAlertViewButtonBackground.png */,
+				223DBA2418048137003712A5 /* TSAlertViewButtonBackground_Highlighted.png */,
+				223DBA2518048137003712A5 /* TSAlertViewCancelButtonBackground.png */,
+				223DBA2618048137003712A5 /* TSAlertViewMessageListViewShadow.png */,
+			);
+			name = TSAlertView;
+			path = ../../TSAlertView/TSAlertView;
+			sourceTree = "<group>";
+		};
 		F48DBE1013935E3B0087CD02 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +113,7 @@
 		F48DBE2513935E3B0087CD02 /* SBTableAlertDemo */ = {
 			isa = PBXGroup;
 			children = (
+				223DBA1E18048137003712A5 /* TSAlertView */,
 				F48DBE47139361E60087CD02 /* SBTableAlert.h */,
 				F48DBE48139361E60087CD02 /* SBTableAlert.m */,
 				F48DBE2E13935E3B0087CD02 /* SBTableAlertDemoAppDelegate.h */,
@@ -156,9 +188,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223DBA2B18048137003712A5 /* TSAlertViewButtonBackground_Highlighted.png in Resources */,
+				223DBA2D18048137003712A5 /* TSAlertViewMessageListViewShadow.png in Resources */,
+				223DBA2A18048137003712A5 /* TSAlertViewButtonBackground.png in Resources */,
 				F48DBE2A13935E3B0087CD02 /* InfoPlist.strings in Resources */,
 				F48DBE3313935E3B0087CD02 /* MainWindow.xib in Resources */,
+				223DBA2C18048137003712A5 /* TSAlertViewCancelButtonBackground.png in Resources */,
+				223DBA2818048137003712A5 /* TSAlertViewBackground.png in Resources */,
 				F48DBE3913935E3B0087CD02 /* RootViewController.xib in Resources */,
+				223DBA2918048137003712A5 /* TSAlertViewBackground2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223DBA2718048137003712A5 /* TSAlertView.m in Sources */,
 				F48DBE2D13935E3B0087CD02 /* main.m in Sources */,
 				F48DBE3013935E3B0087CD02 /* SBTableAlertDemoAppDelegate.m in Sources */,
 				F48DBE3613935E3B0087CD02 /* RootViewController.m in Sources */,
